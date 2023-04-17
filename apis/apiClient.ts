@@ -1,7 +1,7 @@
 import request from 'superagent'
 import { User, UserData, UserWithFriends } from '../common/User'
 
-const externalBaseUrl = 'https://pingpong-backend.devacademy.nz/api/v1'
+export const externalBaseUrl = 'https://pingpong-backend.devacademy.nz/api/v1'
 
 // See routes for what each function returns - functions are presented in order
 export function fetchFriends(userData: UserData): Promise<UserWithFriends> {
