@@ -71,3 +71,23 @@ describe('fetchUser', () => {
     expect(scope.isDone()).toBeTruthy()
   })
 })
+
+describe('sendFriendRequest', () => {
+  it.todo('sends a friends request?', async () => {})
+})
+
+describe('sendFriendConfirm', () => {
+  it.todo('confirms friend request', async () => {})
+})
+
+describe('sendFriendDeny', () => {
+  it.todo('sends a friends request?', async () => {})
+})
+
+describe('changePingStatus', () => {
+  it.todo('sends a friends request?', async () => {})
+})
+
+describe('addFriendApi', () => {
+  it.todo('sends a friends request?', async () => {})
+})
