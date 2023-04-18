@@ -2,7 +2,7 @@ import nock from 'nock'
 import { externalBaseUrl, fetchFriends, fetchUser } from './apiClient'
 
 describe('fetchFriends', () => {
-  it('returns a UserWithFriends object that contains a friend_data array', async () => {
+  it('returns a UserWithFriends object that contains an array containing users friends if user exists', async () => {
     const expected = {
       id: 7,
       auth_id: '108267169986314483935',
@@ -46,10 +46,14 @@ describe('fetchFriends', () => {
     expect(actual).toEqual(expected)
     expect(scope.isDone()).toBeTruthy()
   })
+
+  it.todo(
+    'returns a UserWithFriends object with empty friends array for new user'
+  )
 })
 
 describe('fetchUser', () => {
-  it('returns a user object when passed an auth ID string', async () => {
+  it('returns a user object when passed a valid auth ID string', async () => {
     const expected = {
       id: 7,
       auth_id: '108267169986314483935',
@@ -70,24 +74,33 @@ describe('fetchUser', () => {
     expect(actual).toEqual(expected)
     expect(scope.isDone()).toBeTruthy()
   })
+  it.todo(
+    "returns something so that we know the user doesn't exist if passed an invalid id"
+  )
 })
 
 describe('sendFriendRequest', () => {
-  it.todo('sends a friends request?', async () => {})
+  it.todo(
+    'adds an entry to the friendship table with pending set to true',
+    async () => {}
+  )
 })
 
 describe('sendFriendConfirm', () => {
-  it.todo('confirms friend request', async () => {})
+  it.todo('changes pending to false in friendship table', async () => {})
 })
 
 describe('sendFriendDeny', () => {
-  it.todo('sends a friends request?', async () => {})
+  it.todo('deletes friendship entry in the friendship table', async () => {})
 })
 
 describe('changePingStatus', () => {
-  it.todo('sends a friends request?', async () => {})
+  it.todo(
+    'changes status of ping to setting and adds ping_location if provided',
+    async () => {}
+  )
 })
 
 describe('addFriendApi', () => {
-  it.todo('sends a friends request?', async () => {})
+  it.todo('what does this do? ask Jack', async () => {})
 })
